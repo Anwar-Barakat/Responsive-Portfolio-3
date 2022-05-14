@@ -33,6 +33,7 @@
   --z-tooltip: 10;
   --z-fixed: 100;
   --z-modal: 1000;
+  --main-transition: 0.3s;
 }
 
 @media screen and (min-width: 968px) {
@@ -115,5 +116,111 @@ img {
   display: -ms-grid;
   display: grid;
   gap: 1.5rem;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+}
+
+.nav {
+  max-width: 968px;
+  height: var(--header-height);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav .nav__logo,
+.nav .nav__toggle {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  -webkit-transition: var(--main-transition);
+  transition: var(--main-transition);
+}
+
+.nav .nav__logo:hover {
+  color: var(--first-color);
+}
+
+.nav .nav__toggle {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.nav .nav__toggle:hover {
+  color: var(--first-color);
+}
+
+.nav .nav__menu.show-menu {
+  bottom: 0;
+}
+
+.nav .nav__menu .nav__list {
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.nav .nav__menu .nav__list .nav__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+}
+
+.nav .nav__menu .nav__list .nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav .nav__menu .nav__list .nav__link .nav__icon {
+  font-size: 1.2rem;
+}
+
+.nav .nav__close {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--first-color);
+}
+
+.nav .nav__close:hover {
+  color: var(--first-color-alt);
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    padding: 2rem 1.5rem 4rem;
+    -webkit-box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem 0.5rem 0 0;
+    -webkit-transition: var(--main-transition);
+    transition: var(--main-transition);
+  }
 }
 /*# sourceMappingURL=style.css.map */
