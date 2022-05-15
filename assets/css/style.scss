@@ -11,7 +11,7 @@
     //*
     //* 
     //****************** Colors ******************
-    --hue-color: 250;
+    --hue-color: 230;
     // purple : 250
     // green : 142
     // blue : 230
@@ -135,6 +135,32 @@ a {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--first-color);
+    color: white;
+    padding: 0.75rem 1rem;
+    font-weight: var(--font-medium);
+    border-radius: 0.5rem;
+    transition: var(--main-transition);
+    &:hover {
+        background-color: var(--first-color-alt);
+    }
+    &:hover .button__icon {
+        transform: translateX(0.25rem);
+    }
+    .button__icon {
+        font-size: 1rem;
+        margin-left: var(--mb-0-5);
+        transition: var(--main-transition);
+    }
+}
+
+.button--flex {
+    display: inline-flex;
+    align-items: center;
 }
 
 //? =========================== Global Settings  =======================
@@ -265,3 +291,81 @@ img {
 }
 
 //? =========================== Navbar  ================================
+//? ===========================
+//? ===========================
+//? ===========================
+//? =========================== Landing Page  ==========================
+.home__container {
+    gap: 1rem;
+    .home__content {
+        grid-template-columns: 0.5fr 3fr;
+        align-items: center;
+        padding-top: 3.5rem;
+        .home__social {
+            display: grid;
+            grid-template-columns: max-content;
+            row-gap: 1rem;
+            .home__social-icon {
+                font-size: 1.25rem;
+                color: var(--first-color);
+                &:hover {
+                    color: var(--first-color-alt);
+                }
+            }
+        }
+        .home__img {
+            .home__blob {
+                width: 200px;
+                height: 215px;
+                border-radius: 28% 72% 60% 40% / 29% 49% 51% 71%;
+                background-color: var(--first-color);
+                overflow: hidden;
+                .home__blob-img {
+                    width: 180px;
+                }
+            }
+        }
+        .home__data {
+            grid-column: 1/3;
+            .home__title {
+                font-size: var(--big-font-size);
+            }
+            .home__subtitle {
+                font-size: var(--h3-font-size);
+                color: var(--text-color);
+                font-weight: var(--font-medium);
+                margin-bottom: var(--mb-0-75);
+            }
+            .home__description {
+                margin-bottom: var(--mb-2);
+            }
+        }
+    }
+    .home__scroll {
+        display: none;
+        .home__scroll-button {
+            color: var(--first-color);
+            transition: var(--main-transition);
+            &:hover {
+                transform: translateY(0.25rem);
+            }
+            .home__scroll-mouse {
+                font-size: 1.5rem;
+            }
+            .home__scroll-name {
+                font-size: var(--small-font-size);
+                color: var(--title-color);
+                font-weight: var(--font-medium);
+                margin-right: var(--mb-0-25);
+            }
+            .home__scroll-arrow {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+//? =========================== Landing Page  ==========================
+//? ===========================
+//? ===========================
+//? ===========================
