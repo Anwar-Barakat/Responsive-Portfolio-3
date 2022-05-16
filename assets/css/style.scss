@@ -415,6 +415,23 @@ img {
 .skills__container {
     row-gap: 0;
     .skills__content {
+        &.skills__open {
+            .skills__header {
+                .skills__arrow {
+                    transform: rotate(-180deg);
+                }
+            }
+            .skills__list {
+                height: max-content;
+                margin-bottom: var(--mb-2-5);
+            }
+        }
+        &.skills__close {
+            .skills__list {
+                height: 0;
+                overflow: hidden;
+            }
+        }
         .skills__header {
             display: flex;
             align-items: center;
@@ -441,6 +458,9 @@ img {
             }
         }
         .skills__list {
+            row-gap: 1.5rem;
+            padding-left: 2.7rem;
+            transition: 1s;
             .skills__data {
                 .skills__titles {
                     display: flex;
@@ -462,6 +482,18 @@ img {
                 .skills__percentage {
                     display: block;
                     background-color: var(--first-color);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:350px) {
+    .skills__container {
+        .skills__content {
+            .skills__header {
+                .skills__title {
+                    font-size: 1rem;
                 }
             }
         }
