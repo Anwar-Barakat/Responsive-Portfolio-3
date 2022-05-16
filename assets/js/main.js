@@ -24,3 +24,13 @@ function linkAction() {
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
 //? =========================== Remove Menu Mobile ==========================
+
+
+//? =========================== Fill skills bar dynamically =================
+const skills = document.querySelectorAll('.skills__data');
+skills.forEach(skill => {
+    const skillName = skill.querySelector('.skills__percentage');
+    const skillValue = skillName.getAttribute('percentage');
+    skillName.style.width = skillValue;
+});
+//? =========================== Fill skills bar dynamically =================

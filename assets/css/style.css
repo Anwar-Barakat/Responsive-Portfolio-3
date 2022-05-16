@@ -293,7 +293,7 @@ img {
 
 .home__container .home__content .home__img .home__blob {
   width: 200px;
-  height: 215px;
+  height: 200px;
   border-radius: 28% 72% 60% 40% / 29% 49% 51% 71%;
   background-color: var(--first-color);
   overflow: hidden;
