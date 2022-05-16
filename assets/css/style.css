@@ -11,6 +11,7 @@
   --text-color-light: hsl(var(--hue-color), 8%, 65%);
   --input-color: hsl(var(--hue-color), 70%, 96%);
   --body-color: hsl(var(--hue-color), 60%, 99%);
+  --body-color-transparent: hsl(230deg 60% 99% / 20%);
   --container-color: #ffffff;
   --body-font: 'Poppins', sans-serif;
   --big-font-size: 2rem;
@@ -530,7 +531,7 @@ img {
   }
 }
 
-.works__container .works__list {
+.works__container .work__container-content {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
@@ -601,5 +602,56 @@ img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.works__container .works__modal {
+  z-index: var(--z-modal);
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: -100px;
+  left: 0;
+  background-color: var(--body-color-transparent);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: var(--main-transition) ease;
+  transition: var(--main-transition) ease;
+}
+
+.works__container .works__modal.active {
+  visibility: visible;
+  opacity: 1;
+  top: 0px;
+}
+
+.works__container .works__modal .works__modal-body {
+  position: relative;
+  max-width: 600px;
+  margin: 20px;
+  padding: 40px;
+  border-radius: 0.5rem;
+  background-color: var(--body-color);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.works__container .works__modal .works__modal-body .works_close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.works__container .works__modal .works__modal-body h3 {
+  font-size: 1.5rem;
+}
+
+.works__container .works__modal .works__modal-body img {
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=style.css.map */

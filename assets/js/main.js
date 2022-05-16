@@ -53,3 +53,29 @@ skillsHeader.forEach((header) => {
     header.addEventListener('click', toggleSkills)
 });
 //? =========================== According Skills ============================
+
+
+//? =========================== Hide/Show the work modal ====================
+const protfolioModals = document.querySelectorAll('.works__modal'),
+    imgCards = document.querySelectorAll('.works__list'),
+    portfolioCloseButtons = document.querySelectorAll('.works_close-btn');
+
+var portfolioModal = function(modalClick) {
+    protfolioModals[modalClick].classList.add('active')
+};
+
+imgCards.forEach((imgCard, i) => {
+    imgCard.addEventListener('click', () => {
+        portfolioModal(i)
+    });
+});
+
+portfolioCloseButtons.forEach((portfolioCloseButton) => {
+    portfolioCloseButton.addEventListener('click', () => {
+        protfolioModals.forEach((protfolioModalView) => {
+            protfolioModalView.classList.remove('active')
+        });
+    });
+})
+
+//? =========================== Hide/Show the work modal ====================
