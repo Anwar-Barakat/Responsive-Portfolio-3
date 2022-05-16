@@ -260,7 +260,7 @@ textarea {
     padding: 2rem 1.5rem 4rem;
     -webkit-box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
             box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 0.5rem 0.5rem 0 0;
+    border-radius: 3rem 3rem 0 0;
     -webkit-transition: var(--main-transition);
     transition: var(--main-transition);
   }
@@ -710,5 +710,70 @@ textarea {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   padding: 0.25rem 0.5rem 0;
+}
+
+.footer {
+  padding-top: 2rem;
+}
+
+.footer .footer__bg {
+  background-color: var(--first-color-second);
+  padding: 2rem 0 3rem;
+}
+
+.footer .footer__bg .footer__container {
+  row-gap: 3.5rem;
+}
+
+.footer .footer__bg .footer__container .footer__title {
+  font-size: var(--h1-font-size);
+  margin-bottom: 0-var --mb-0-25;
+}
+
+.footer .footer__bg .footer__container .footer__subtitle {
+  font-size: var(--small-font-size);
+}
+
+.footer .footer__bg .footer__container .footer__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.footer .footer__bg .footer__container .footer__links .footer__link {
+  -webkit-transition: var(--main-transition);
+  transition: var(--main-transition);
+}
+
+.footer .footer__bg .footer__container .footer__links .footer__link:hover {
+  color: var(--first-color-lighter);
+}
+
+.footer .footer__bg .footer__container .footer__socials .footer__social {
+  font-size: 1.25rem;
+  margin-right: var(--mb-1-5);
+}
+
+.footer .footer__bg .footer__container .footer__socials .footer__social:hover {
+  color: var(--first-color-lighter);
+}
+
+.footer .footer__bg .footer__copyright {
+  font-size: var(--smaller-font-size);
+  text-align: center;
+  color: var(--text-color-light);
+  margin-top: var(--mb-3);
+}
+
+.footer .footer__bg .footer__title,
+.footer .footer__bg .footer__subtitle,
+.footer .footer__bg .footer__link,
+.footer .footer__bg .footer__social {
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
