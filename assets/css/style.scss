@@ -249,7 +249,7 @@ textarea {
     }
     .nav__menu {
         &.show-menu {
-            bottom: 0;
+            top: 5%;
         }
         .nav__list {
             grid-template-columns: repeat(3, 1fr);
@@ -260,6 +260,10 @@ textarea {
                 align-items: center;
                 font-size: var(--small-font-size);
                 font-weight: var(--font-medium);
+                color: var(--title-color);
+                &.active-link {
+                    color: var(--first-color);
+                }
                 &:hover {
                     color: var(--first-color);
                 }
@@ -286,13 +290,19 @@ textarea {
     .nav__menu {
         position: fixed;
         bottom: -100%;
-        left: 0;
         width: 100%;
         background-color: var(--body-color);
         padding: 2rem 1.5rem 4rem;
-        box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-        border-radius: 3rem 3rem 0 0;
         transition: var(--main-transition);
+        top: -40%;
+        left: 50%;
+        height: max-content;
+        border-radius: 0.5rem;
+        width: 95%;
+        transform: translateX(-50%);
+        z-index: var(--z-modal);
+        box-shadow: var(--box-shadow);
+        backdrop-filter: blur(37px);
     }
 }
 

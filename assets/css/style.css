@@ -205,7 +205,7 @@ textarea {
 }
 
 .nav .nav__menu.show-menu {
-  bottom: 0;
+  top: 5%;
 }
 
 .nav .nav__menu .nav__list {
@@ -227,6 +227,11 @@ textarea {
           align-items: center;
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
+  color: var(--title-color);
+}
+
+.nav .nav__menu .nav__list .nav__link.active-link {
+  color: var(--first-color);
 }
 
 .nav .nav__menu .nav__list .nav__link:hover {
@@ -254,15 +259,25 @@ textarea {
   .nav__menu {
     position: fixed;
     bottom: -100%;
-    left: 0;
     width: 100%;
     background-color: var(--body-color);
     padding: 2rem 1.5rem 4rem;
-    -webkit-box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-            box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 3rem 3rem 0 0;
     -webkit-transition: var(--main-transition);
     transition: var(--main-transition);
+    top: -40%;
+    left: 50%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    border-radius: 0.5rem;
+    width: 95%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    z-index: var(--z-modal);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    -webkit-backdrop-filter: blur(37px);
+            backdrop-filter: blur(37px);
   }
 }
 
