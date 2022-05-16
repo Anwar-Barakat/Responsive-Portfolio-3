@@ -165,6 +165,10 @@ img {
     align-items: center;
 }
 
+textarea {
+    resize: none;
+}
+
 //? =========================== Global Settings  =======================
 //? ===========================
 //? ===========================
@@ -517,106 +521,157 @@ img {
 //? ===========================
 //? =========================== Works Section  ===========================
 .works__container {
+    overflow: inherit;
     .work__container-content {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         max-width: 100%;
         gap: 2rem;
         margin: 0 auto;
-    }
-    .works__list {
-        .works__list-card {
-            position: relative;
-            max-width: 100%;
-            height: 360px;
-            border-radius: 0.5rem;
-            box-shadow: var(--box-shadow);
-            overflow: hidden;
-            cursor: pointer;
-            &:hover .overlay {
-                bottom: 0%;
+        .works__list {
+            .works__list-card {
+                position: relative;
+                max-width: 100%;
+                height: 360px;
+                border-radius: 0.5rem;
+                box-shadow: var(--box-shadow);
+                overflow: hidden;
+                cursor: pointer;
+                &:hover .overlay {
+                    bottom: 0%;
+                }
+                &:hover .works__list-info {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                .overlay {
+                    transition: var(--main-transition) ease;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    left: 0;
+                    bottom: -100%;
+                    z-index: var(--z-modal);
+                }
+                .works__list-info {
+                    z-index: var(--z-modal);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    margin: var(--mb-0-5);
+                    color: white;
+                    transform: translateY(2rem);
+                    opacity: 0;
+                    transition: var(--main-transition) ease;
+                    h3 {
+                        font-size: 1.5rem;
+                        color: white;
+                    }
+                    span {
+                        font-size: 1.2em;
+                    }
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
-            &:hover .works__list-info {
-                transform: translateY(0);
+        }
+        .works__modal {
+            z-index: var(--z-modal);
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: -100px;
+            left: 0;
+            background-color: var(--body-color-transparent);
+            backdrop-filter: blur(20px);
+            visibility: hidden;
+            opacity: 0;
+            transition: var(--main-transition) ease;
+            &.active {
+                visibility: visible;
                 opacity: 1;
+                top: 0px;
             }
-            .overlay {
-                transition: var(--main-transition) ease;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                left: 0;
-                bottom: -100%;
-                z-index: var(--z-modal);
-            }
-            .works__list-info {
-                z-index: var(--z-modal);
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                margin: var(--mb-0-5);
-                color: white;
-                transform: translateY(2rem);
-                opacity: 0;
-                transition: var(--main-transition) ease;
+            .works__modal-body {
+                position: relative;
+                max-width: 600px;
+                margin: 20px;
+                padding: 40px;
+                border-radius: 0.5rem;
+                background-color: var(--body-color);
+                box-shadow: var(--box-shadow);
+                .works_close-btn {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    margin: 20px;
+                    cursor: pointer;
+                }
                 h3 {
                     font-size: 1.5rem;
-                    color: white;
                 }
-                span {
-                    font-size: 1.2em;
+                img {
+                    width: 100%;
+                    margin: 20px 0;
+                    border-radius: 10px;
                 }
-            }
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-    .works__modal {
-        z-index: var(--z-modal);
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        top: -100px;
-        left: 0;
-        background-color: var(--body-color-transparent);
-        backdrop-filter: blur(20px);
-        visibility: hidden;
-        opacity: 0;
-        transition: var(--main-transition) ease;
-        &.active {
-            visibility: visible;
-            opacity: 1;
-            top: 0px;
-        }
-        .works__modal-body {
-            position: relative;
-            max-width: 600px;
-            margin: 20px;
-            padding: 40px;
-            border-radius: 0.5rem;
-            background-color: var(--body-color);
-            box-shadow: var(--box-shadow);
-            .works_close-btn {
-                position: absolute;
-                top: 0;
-                right: 0;
-                margin: 20px;
-                cursor: pointer;
-            }
-            h3 {
-                font-size: 1.5rem;
-            }
-            img {
-                width: 100%;
-                margin: 20px 0;
-                border-radius: 10px;
             }
         }
     }
 }
 
 //? =========================== Works Section  ===========================
+//? ===========================
+//? ===========================
+//? ===========================
+//? =========================== Contact Section  =========================
+.contact__container {
+    row-gap: 3rem;
+    .contact__inforamtion {
+        display: flex;
+        margin-bottom: var(--mb-2);
+        .contact__icon {
+            font-size: 2rem;
+            color: var(--first-color);
+            margin-right: var(--mb-0-75);
+        }
+        .contact__title {
+            font-size: var(--h3-font-size);
+            color: var(--font-medium);
+        }
+        .contact__subtitle {
+            font-size: var(--small-font-size);
+            color: var(--text-color-light);
+        }
+    }
+    .contact__form {
+        .contact__content {
+            background-color: var(--input-color);
+            padding: 0.75rem 1rem 0.25rem;
+            border-radius: 0.5rem;
+            .contact__label {
+                font-size: var(--smaller-font-size);
+                color: var(--title-color);
+            }
+            .contact__input {
+                width: 100%;
+                background: transparent;
+                outline: none;
+                border: 0;
+                color: var(--text-color);
+                font-family: var(--body-font);
+                font-size: var(--normal-font-size);
+                padding: 0.25rem 0.5rem 0;
+            }
+        }
+    }
+}
+
+//? =========================== Contact Section  =========================
+//? ===========================
+//? ===========================
+//? ===========================
