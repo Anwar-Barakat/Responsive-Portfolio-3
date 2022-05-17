@@ -26,14 +26,14 @@ navLink.forEach(n => n.addEventListener('click', linkAction));
 //? =========================== Remove Menu Mobile ==========================
 
 
-//? =========================== Fill skills bar dynamically =================
+//? =========================== Fill Skills Bar Dynamically =================
 const skills = document.querySelectorAll('.skills__data');
 skills.forEach(skill => {
     const skillName = skill.querySelector('.skills__percentage');
     const skillValue = skillName.getAttribute('percentage');
     skillName.style.width = skillValue;
 });
-//? =========================== Fill skills bar dynamically =================
+//? =========================== Fill Skills Bar Dynamically =================
 
 
 //? =========================== According Skills ============================
@@ -55,7 +55,7 @@ skillsHeader.forEach((header) => {
 //? =========================== According Skills ============================
 
 
-//? =========================== Hide/Show the work modal ====================
+//? =========================== Hide/Show The Work Modal ====================
 const protfolioModals = document.querySelectorAll('.works__modal'),
     imgCards = document.querySelectorAll('.works__list'),
     portfolioCloseButtons = document.querySelectorAll('.works_close-btn');
@@ -78,7 +78,7 @@ portfolioCloseButtons.forEach((portfolioCloseButton) => {
     });
 })
 
-//? =========================== Hide/Show the work modal ====================
+//? =========================== Hide/Show The Work Modal ====================
 
 
 
@@ -93,13 +93,39 @@ function scrollActive() {
         const sectionTop = current.offsetTop - 50;
         const sectionId = current.getAttribute('id')
 
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight)
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        } else {
+        else
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
-        }
+
     })
 }
-window.addEventListener('scroll', scrollActive)
+window.addEventListener('scroll', scrollActive);
 
-//? =========================== CHANGE BACKGROUND HEADER =================
+//? =========================== SCROLL SECTIONS ACTIVE LINK ==============
+
+
+//? =========================== Change Header Background  ================
+function scrollHeader() {
+    const nav = document.getElementById('header');
+
+    if (this.scrollY >= 80)
+        nav.classList.add('scroll-header')
+    else
+        nav.classList.remove('scroll-header')
+}
+window.addEventListener('scroll', scrollHeader);
+//? =========================== Change Header Background  ================
+
+
+//? =========================== Show Scroll Top  =========================
+function scrollTop() {
+    const scrollTop = document.getElementById('scrollTop');
+
+    if (this.scrollY >= 600)
+        scrollTop.classList.add('display-scroll')
+    else
+        scrollTop.classList.remove('display-scroll')
+}
+window.addEventListener('scroll', scrollTop);
+//? =========================== Show Scroll Top  =========================
