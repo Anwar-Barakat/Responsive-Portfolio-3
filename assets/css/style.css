@@ -1,4 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+@-webkit-keyframes arrow-down {
+  0% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  30% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+@keyframes arrow-down {
+  0% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  30% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+
 :root {
   --header-height: 3rem;
   --hue-color: 340;
@@ -12,10 +33,11 @@
   --input-color: hsl(var(--hue-color), 70%, 96%);
   --body-color: hsl(var(--hue-color), 60%, 99%);
   --body-color-transparent: hsl(230deg 60% 99% / 20%);
-  --container-color: #ffffff;
+  --container-color: white;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
   --body-font: 'Poppins', sans-serif;
+  --bigger-font-size: 3.5rem;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -38,6 +60,7 @@
   --z-modal: 1000;
   --main-transition: 0.3s;
   --box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  --box-shadow-alt: #0000001a 0px 1px 3px 0px;
 }
 
 @media screen and (min-width: 968px) {
@@ -164,13 +187,23 @@ textarea {
 }
 
 .section__title {
-  font-size: var(--h1-font-size);
+  font-size: var(--bigger-font-size);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(70%, #0e2431));
+  background: linear-gradient(to top, transparent 0%, #0e2431 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.1;
 }
 
 .section__subtitle {
-  font-size: var(--small-font-size);
   display: block;
-  margin-bottom: var(--mb-3);
+  margin-bottom: var(--mb-2);
+  font-size: 1.5rem;
+  font-weight: 700;
+  -webkit-transform: translateY(-65px);
+          transform: translateY(-65px);
 }
 
 .section__title,
@@ -430,6 +463,10 @@ textarea {
 }
 
 .home__container .home__scroll .home__scroll-button .home__scroll-arrow {
+  -webkit-animation: arrow-down ease 2s infinite;
+          animation: arrow-down ease 2s infinite;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
   font-size: 1.25rem;
 }
 
@@ -563,6 +600,20 @@ textarea {
   margin-left: auto;
   -webkit-transition: var(--main-transition);
   transition: var(--main-transition);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: var(--box-shadow-alt), var(--box-shadow-alt);
+          box-shadow: var(--box-shadow-alt), var(--box-shadow-alt);
 }
 
 .skills__container .skills__content .skills__list {
@@ -782,12 +833,24 @@ textarea {
 }
 
 .footer .footer__bg .footer__container .footer__title {
-  font-size: var(--h1-font-size);
+  font-size: var(--big-font-size);
   margin-bottom: 0-var --mb-0-25;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(70%, white));
+  background: linear-gradient(to top, transparent 0%, white 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.7;
 }
 
 .footer .footer__bg .footer__container .footer__subtitle {
   font-size: var(--small-font-size);
+}
+
+.footer .footer__bg .footer__container .footer__title-1 {
+  color: white;
+  text-align: center;
+  margin-bottom: var(--mb-1);
+  text-transform: capitalize;
 }
 
 .footer .footer__bg .footer__container .footer__links {
@@ -810,9 +873,19 @@ textarea {
   color: var(--first-color-lighter);
 }
 
+.footer .footer__bg .footer__container .footer__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+}
+
 .footer .footer__bg .footer__container .footer__socials .footer__social {
   font-size: 1.25rem;
-  margin-right: var(--mb-1-5);
 }
 
 .footer .footer__bg .footer__container .footer__socials .footer__social:hover {
@@ -822,8 +895,9 @@ textarea {
 .footer .footer__bg .footer__copyright {
   font-size: var(--smaller-font-size);
   text-align: center;
-  color: var(--text-color-light);
+  color: white;
   margin-top: var(--mb-3);
+  letter-spacing: 1px;
 }
 
 .footer .footer__bg .footer__title,
@@ -905,6 +979,15 @@ textarea {
   .works__container .work__container-content .works__modal .works__modal-body p {
     font-size: var(--small-font-size);
   }
+  .footer .footer__bg .footer__container .footer__title-1 {
+    text-align: initial;
+  }
+}
+
+@media screen and (min-width: 351px) {
+  .footer .footer__bg .footer__container .footer__title-1 {
+    text-align: initial;
+  }
 }
 
 @media screen and (min-width: 582px) {
@@ -934,6 +1017,11 @@ textarea {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
+  .footer .footer__bg .footer__container .footer__socials {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -945,10 +1033,7 @@ textarea {
     margin-right: auto;
   }
   .section {
-    padding: 6rem 0 2rem;
-  }
-  .section__subtitle {
-    margin-bottom: 3.5rem;
+    padding: 4rem 0 2rem;
   }
   .header {
     top: 0;
@@ -1057,10 +1142,28 @@ textarea {
     padding: 3rem 0 3.5rem;
   }
   .footer .footer__bg .footer__container .footer__links {
-    text-align: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+  .footer .footer__bg .footer__container .footer__links .footer__link {
+    font-size: var(--small-font-size);
   }
   .footer .footer__bg .footer__socials {
-    justify-self: flex-end;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-column-gap: 2rem;
+            column-gap: 2rem;
+  }
+  .footer .footer__bg .footer__socials .footer__social {
+    margin-right: 0 !important;
   }
   .footer .footer__bg .footer__copyright {
     margin-top: 4rem;
