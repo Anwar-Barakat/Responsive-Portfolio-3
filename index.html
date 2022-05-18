@@ -303,8 +303,17 @@
             <h2 class="section__title">Works</h2>
             <span class="section__subtitle">Most recent works</span>
 
+            <div class="works__filters container">
+                <ul class="works__filters-btns">
+                    <li class="list active" data-filter="all">All</li>
+                    <li class="list" data-filter="frontend">Frontend</li>
+                    <li class="list" data-filter="backend">Backend</li>
+                    <li class="list" data-filter="laravel">Laravel</li>
+                </ul>
+            </div>
+
             <div class="works__container container grid">
-                <div class="work__container-content">
+                <div class="work__container-content frontend">
                     <div class="work__container-list">
                         <div class="works__list">
                             <div class="works__list-card">
@@ -327,7 +336,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="work__container-content">
+                <div class="work__container-content backend">
                     <div class="work__container-list">
                         <div class="works__list">
                             <div class="works__list-card">
@@ -350,7 +359,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="work__container-content">
+                <div class="work__container-content laravel">
                     <div class="work__container-list">
                         <div class="works__list">
                             <div class="works__list-card">
@@ -495,9 +504,14 @@
     <!-- ============================= Scroll Top ======================= -->
 
 
+    <!-- ========================= jQuery CDN =========================== -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- ========================= jQuery CDN =========================== -->
+
     <!-- ========================= CUSTOM JS ============================ -->
     <script src="assets/js/main.js"></script>
     <!-- ========================= CUSTOM JS ============================ -->
+
 </body>
 
 </html>

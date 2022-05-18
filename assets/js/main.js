@@ -154,3 +154,20 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 });
 //? =========================== Dark/Light Mode  =========================
+
+
+//? =========================== Works Filter  ============================
+$(function() {
+    $('.list').click(function() {
+        $(this).addClass('active').siblings().removeClass('active');
+
+        const value = $(this).attr('data-filter');
+        if (value == 'all')
+            $('.work__container-content').show(500);
+        else {
+            $('.work__container-content').not('.' + value).hide(500);
+            $('.work__container-content').filter('.' + value).show(500);
+        }
+    });
+});
+//? =========================== Works Filter  ============================
