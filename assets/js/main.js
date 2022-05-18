@@ -1,3 +1,17 @@
+//? =========================== Button Anumation  ===========================
+const mainBtn = document.querySelectorAll('.button');
+
+mainBtn.forEach((btn) => {
+        btn.onmousemove = function(e) {
+            const x = e.pageX - btn.offsetLeft;
+            const y = e.pageY - btn.offsetTop;
+
+            btn.style.setProperty('--x', x + 'px');
+            btn.style.setProperty('--y', y + 'px');
+        }
+    })
+    //? =========================== Button Anumation  ===========================
+
 //? =========================== Show Navbar  ================================
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
@@ -79,7 +93,6 @@ portfolioCloseButtons.forEach((portfolioCloseButton) => {
 })
 
 //? =========================== Hide/Show The Work Modal ====================
-
 
 
 //? =========================== SCROLL SECTIONS ACTIVE LINK =================
@@ -171,3 +184,24 @@ $(function() {
     });
 });
 //? =========================== Works Filter  ============================
+
+//? =========================== Change Website Color  ====================
+let toggleBtn = document.querySelector('.nav__color-icon'),
+    colorContainer = document.querySelector('.nav__color-container');
+
+toggleBtn.addEventListener('click', () => {
+    colorContainer.classList.toggle('active');
+});
+
+
+
+var colors = document.getElementsByClassName('change-color');
+for (i = 0; i < colors.length; i++) {
+    colors[i].addEventListener('click', changeColor);
+}
+
+function changeColor() {
+    var color = this.getAttribute('data-color');
+    document.documentElement.style.setProperty('--hue-color', color);
+}
+//? =========================== Change Website Color  ====================

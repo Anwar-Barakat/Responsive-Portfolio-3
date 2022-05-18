@@ -57,6 +57,19 @@
                 <i class="uil uil-times nav__close" id="nav-close"></i>
             </div>
 
+            <div class="nav__color">
+                <div class="nav__color-container">
+                    <ul class="colors">
+                        <li data-color="340" class="change-color"></li>
+                        <li data-color="230" class="change-color"></li>
+                        <li data-color="177" class="change-color"></li>
+                        <li data-color="250" class="change-color"></li>
+                        <li data-color="359" class="change-color"></li>
+                    </ul>
+                </div>
+                <i class="uil uil-palette nav__color-icon"></i>
+            </div>
+
             <div class="nav__btns">
                 <i class="uil uil-moon change__theme" id="theme-btn"></i>
                 <div class="nav__toggle" id="nav-toggle">
@@ -98,8 +111,10 @@
                         <h3 class="home__subtitle">FullStack Developer</h3>
                         <p class="home__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa minima aut optio repudiandae quo eveniet rem ea. Quisquam, dignissimos soluta!</p>
                         <a href="#contact" class="button button--flex">
+                            <span>
                             ContactMe
                             <i class="uil uil-message button__icon"></i>
+                           </span>
                         </a>
                     </div>
 
@@ -121,7 +136,11 @@
             <span class="section__subtitle">My introdution</span>
 
             <div class="about__container container grid">
-                <img src="assets/images/header.jpeg" alt="" class="about__img">
+                <div class="image__box">
+                    <div class="image__box-img">
+                        <img src="assets/images/header.jpeg" alt="" class="about__img">
+                    </div>
+                </div>
                 <div class="about__data">
                     <p class="about__description">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam eius tempore quaerat iure quas magnam ad, qui, architecto, voluptatum culpa iusto. Cumque perferendis aspernatur provident!
@@ -144,7 +163,9 @@
 
                     <div class="about__buttons">
                         <a href="" download="" class="button button--flex">
-                            Download Resume<i class="uil uil-download-alt button__icon"></i>
+                            <span>
+                                Download Resume<i class="uil uil-download-alt button__icon"></i>
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -437,7 +458,9 @@
                     </div>
                     <div>
                         <a href="" class="button button--flex">
+                            <span>
                             Send Message <i class="uil uil-message button__icon"></i>
+                           </span>
                         </a>
                     </div>
                 </form>
