@@ -145,7 +145,11 @@ body {
         --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
         --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
         //****************** Colors ****************** 
-        --box-shadow: 0px -2px 4px hsla(0, 0%, 53%, 0.09);
+        --box-shadow: 0 -2px 10px rgb(0 0 0);
+        --box-shadow-alt: 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 2px 1px -1px rgb(0 0 0 / 12%), 0px 1px 3px 0px rgb(0 0 0 / 20%);
+        .button {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
     }
 }
 
@@ -482,6 +486,10 @@ textarea {
 //? ===========================
 //? ===========================
 //? =========================== Landing Page  ==========================
+.home {
+    position: relative;
+}
+
 .home__container {
     gap: 1rem;
     .home__content {
@@ -599,6 +607,19 @@ textarea {
     }
 }
 
+.about {
+    position: relative;
+    .about__overlay {
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        z-index: -1;
+        top: 10rem;
+        background: linear-gradient(180deg, var(--first-color-lighter) 30%, transparent);
+        display: none;
+    }
+}
+
 //? =========================== About Section  ============================
 //? ===========================
 //? ===========================
@@ -702,6 +723,16 @@ textarea {
 //? ===========================
 //? =========================== Works Section  ===========================
 .works {
+    position: relative;
+    .works__overlay {
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        z-index: -1;
+        top: 10rem;
+        background: linear-gradient(180deg, var(--first-color-lighter) 30%, transparent);
+        display: none;
+    }
     .works__filters {
         .works__filters-btns {
             display: flex;
@@ -717,6 +748,7 @@ textarea {
                 border-radius: 0.3rem;
                 font-size: var(--small-font-size);
                 text-transform: uppercase;
+                color: var(--title-color);
                 &.active {
                     background-color: var(--first-color);
                     color: white;
@@ -1052,6 +1084,9 @@ textarea {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+    .footer hr {
+        display: none;
+    }
 }
 
 @media screen and (min-width:768px) {
@@ -1204,6 +1239,10 @@ textarea {
     }
     .contact__container .contact__inputs {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .about__overlay,
+    .works__overlay {
+        display: block !important;
     }
 }
 

@@ -183,6 +183,7 @@ $(function() {
         }
     });
 });
+
 //? =========================== Works Filter  ============================
 
 //? =========================== Change Website Color  ====================
@@ -200,8 +201,30 @@ for (i = 0; i < colors.length; i++) {
     colors[i].addEventListener('click', changeColor);
 }
 
+const selectedColor = localStorage.getItem('selected-color');
+
+if (selectedColor) {
+    document.documentElement.style.setProperty('--hue-color', selectedColor);
+}
+
+var style = getComputedStyle(document.body).getPropertyValue('--hue-color');
+
+
+
 function changeColor() {
     var color = this.getAttribute('data-color');
+    var style = getComputedStyle(document.body).getPropertyValue('--hue-color');
+
+    localStorage.setItem('selected-color', style)
     document.documentElement.style.setProperty('--hue-color', color);
 }
 //? =========================== Change Website Color  ====================
+
+
+//? =========================== Sroll To Top  ============================
+document.getElementById('scrollTop').addEventListener('click', () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+
+});
+//? =========================== Sroll To Top  ============================
