@@ -7,6 +7,24 @@
     }
 }
 
+@keyframes slidein {
+    from {
+        height: 0px;
+    }
+    to {
+        height: max-content;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
 //? ============================ Google Fonts ===========================
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 //? ============================ Google Fonts ===========================
@@ -488,6 +506,17 @@ textarea {
 //? =========================== Landing Page  ==========================
 .home {
     position: relative;
+    .uil-cog {
+        position: absolute;
+        font-size: 23vw;
+        opacity: 0.15;
+        color: var(--first-color-lighter);
+        &.nut1 {
+            top: 10%;
+            left: -10rem;
+            animation: rotate 10s linear infinite;
+        }
+    }
 }
 
 .home__container {
@@ -512,8 +541,6 @@ textarea {
             .home__blob {
                 width: 200px;
                 height: 200px;
-                border-radius: 28% 72% 60% 40% / 29% 49% 51% 71%;
-                background-color: var(--first-color);
                 overflow: hidden;
                 .home__blob-img {
                     width: 180px;
@@ -523,7 +550,7 @@ textarea {
         .home__data {
             grid-column: 1/3;
             .home__title {
-                font-size: var(--big-font-size);
+                font-size: var(--h1-font-size);
             }
             .home__subtitle {
                 font-size: var(--h3-font-size);
@@ -607,33 +634,11 @@ textarea {
     }
 }
 
-.about {
-    position: relative;
-    .about__overlay {
-        position: absolute;
-        width: 100%;
-        height: 300px;
-        z-index: -1;
-        top: 10rem;
-        background: linear-gradient(180deg, var(--first-color-lighter) 30%, transparent);
-        display: none;
-    }
-}
-
 //? =========================== About Section  ============================
 //? ===========================
 //? ===========================
 //? ===========================
 //? =========================== Skills Section  ===========================
-@keyframes slidein {
-    from {
-        height: 0px;
-    }
-    to {
-        height: max-content;
-    }
-}
-
 .skills__container {
     row-gap: 0;
     .skills__content {
@@ -723,16 +728,6 @@ textarea {
 //? ===========================
 //? =========================== Works Section  ===========================
 .works {
-    position: relative;
-    .works__overlay {
-        position: absolute;
-        width: 100%;
-        height: 300px;
-        z-index: -1;
-        top: 10rem;
-        background: linear-gradient(180deg, var(--first-color-lighter) 30%, transparent);
-        display: none;
-    }
     .works__filters {
         .works__filters-btns {
             display: flex;
@@ -767,44 +762,32 @@ textarea {
                     box-shadow: var(--box-shadow);
                     overflow: hidden;
                     cursor: pointer;
-                    &:hover .overlay {
-                        bottom: 0%;
-                    }
-                    &:hover .works__list-info {
-                        transform: translateY(0);
-                        opacity: 1;
-                    }
-                    .overlay {
-                        transition: var(--main-transition) ease;
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        background-color: rgba(0, 0, 0, 0.5);
-                        left: 0;
-                        bottom: -100%;
-                        z-index: var(--z-tooltip);
-                    }
+                    height: 220px;
+                    padding: 10px;
                     .works__list-info {
                         z-index: var(--z-tooltip);
                         position: absolute;
                         bottom: 0;
                         left: 0;
                         margin: var(--mb-0-5);
-                        color: white;
-                        transform: translateY(2rem);
-                        opacity: 0;
-                        transition: var(--main-transition) ease;
+                        color: var(--title-color);
                         h3 {
-                            font-size: 1.5rem;
-                            color: white;
+                            font-size: 1rem;
+                            &:hover i {
+                                padding-left: 5px;
+                            }
+                            i {
+                                color: var(--first-color);
+                                transition: var(--main-transition);
+                            }
                         }
                         span {
-                            font-size: 1.2em;
+                            font-size: 1rem;
+                            color: var(--first-color-alt);
                         }
                     }
                     img {
                         width: 100%;
-                        height: 100%;
                         object-fit: cover;
                     }
                 }
@@ -834,6 +817,14 @@ textarea {
                     border-radius: 0.5rem;
                     background-color: var(--body-color);
                     box-shadow: var(--box-shadow);
+                    display: flex;
+                    column-gap: 3rem;
+                    flex-direction: column;
+                    .image,
+                    .info {
+                        flex: 0 0 50%;
+                        max-width: 100%;
+                    }
                     .works_close-btn {
                         position: absolute;
                         top: 0;
@@ -841,13 +832,20 @@ textarea {
                         margin: 20px;
                         cursor: pointer;
                     }
-                    h3 {
-                        font-size: 1.5rem;
+                    .image {
+                        img {
+                            width: 100%;
+                            margin: 20px 0;
+                            border-radius: 10px;
+                        }
                     }
-                    img {
-                        width: 100%;
-                        margin: 20px 0;
-                        border-radius: 10px;
+                    .info {
+                        h3 {
+                            font-size: var(--h2-font-size);
+                        }
+                        p {
+                            font-size: var(--small-font-size);
+                        }
                     }
                 }
             }
@@ -995,7 +993,7 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow-alt);
     &.display-scroll {
         bottom: 4rem;
         opacity: 1;
@@ -1179,6 +1177,9 @@ textarea {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .works .works__container .work__container-content .works__modal .works__modal-body {
+        flex-direction: row;
     }
     .contact__data {
         display: block;

@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- =========================== UNICONS ============================= -->
 
-    <!-- =========================== SWIPER JS =========================== -->
-    <link rel="stylesheet" href="">
-    <!-- =========================== SWIPER JS =========================== -->
+    <!-- ========================= Slick ================================ -->
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <!-- ========================= Slick ================================ -->
+
 
     <!-- ========================= CUSTOM CSS ============================ -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -109,7 +111,7 @@
                     <div class="home__data">
                         <h1 class="home__title">Hi, I'm Anwar</h1>
                         <h3 class="home__subtitle">FullStack Developer</h3>
-                        <p class="home__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa minima aut optio repudiandae quo eveniet rem ea. Quisquam, dignissimos soluta!</p>
+                        <p class="home__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, minus!</p>
                         <a href="#contact" class="button button--flex">
                             <span>
                             ContactMe
@@ -127,6 +129,7 @@
                     </a>
                 </div>
             </div>
+            <i class="uil uil-cog nut1"></i>
         </section>
         <!-- ============================= Home ========================= -->
 
@@ -134,8 +137,6 @@
         <section class="section about" id="about">
             <h2 class="section__title">About ME</h2>
             <span class="section__subtitle">My introdution</span>
-
-            <div class="about__overlay"></div>
 
             <div class="about__container container grid">
                 <div class="image__box">
@@ -324,8 +325,6 @@
             <h2 class="section__title">Works</h2>
             <span class="section__subtitle">Most recent works</span>
 
-            <div class="works__overlay"></div>
-
             <div class="works__filters container">
                 <ul class="works__filters-btns">
                     <li class="list active" data-filter="all">All</li>
@@ -340,21 +339,33 @@
                     <div class="work__container-list">
                         <div class="works__list">
                             <div class="works__list-card">
-                                <div class="overlay"></div>
                                 <div class="works__list-info">
-                                    <h3>Web Design</h3>
-                                    <span>Lorem.</span>
+                                    <h3>Web Design1 <i class="uil uil-arrow-right"></i></h3>
                                 </div>
                                 <img src="assets/images/works/guggenheim-museum-2707258_1920.jpg" alt="">
                             </div>
                         </div>
-                        <div class="works__modal">
-                            <div class="works__modal-body">
-                                <i class="uil uil-times works_close-btn"></i>
-                                <h3>Web Design</h3>
-                                <img src="assets/images/works/guggenheim-museum-2707258_1920.jpg" alt="">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate laudantium modi veritatis mollitia nisi quas nesciunt atque vitae sint rerum ducimus, aliquid ab numquam, quis architecto, qui veniam necessitatibus aperiam?</p>
-
+                        <div class="portfolio__popup">
+                            <div class="portfolio__popup-inner">
+                                <div class="portfolio__popup-contetn grid">
+                                    <span class="portfolio__popup-colse"><i class="uil uil-times"></i> </span>
+                                    <div class="pp__thumbnail">
+                                        <img src="assets/images/works/guggenheim-museum-2707258_1920.jpg" alt="">
+                                    </div>
+                                    <div class="portfolio__popup-info">
+                                        <div class="portfolio__popup-subtitle">Features</div>
+                                        <div class="portfolio__popup-body">
+                                            <h3 class="portfolio__popup-title">App Mobile</h3>
+                                        </div>
+                                        <p class="portfolio__popup-descsriptio"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, cupiditate.</p>
+                                        <ul class="details__info">
+                                            <li>Created - <span>3 dec 2020</span></li>
+                                            <li>technologies - <span>html,css,php,mysql</span></li>
+                                            <li>Role - <span>frontedn</span></li>
+                                            <li>view - <span>www.domain.com</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -363,21 +374,33 @@
                     <div class="work__container-list">
                         <div class="works__list">
                             <div class="works__list-card">
-                                <div class="overlay"></div>
                                 <div class="works__list-info">
-                                    <h3>Web Design2</h3>
-                                    <span>Lorem, ipsum.</span>
+                                    <h3>Web Design 2<i class="uil uil-arrow-right"></i></h3>
                                 </div>
                                 <img src="assets/images/works/guggenheim-museum-2707258_1920.jpg" alt="">
                             </div>
                         </div>
-                        <div class="works__modal">
-                            <div class="works__modal-body">
-                                <i class="uil uil-times works_close-btn"></i>
-                                <h3>Web Design2</h3>
-                                <img src="assets/images/works/guggenheim-museum-2707258_1920.jpg" alt="">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate laudantium modi veritatis mollitia nisi quas nesciunt atque vitae sint rerum ducimus, aliquid ab numquam, quis architecto, qui veniam necessitatibus aperiam?</p>
-
+                        <div class="portfolio__popup">
+                            <div class="portfolio__popup-inner">
+                                <div class="portfolio__popup-contetn grid">
+                                    <span class="portfolio__popup-colse"><i class="uil uil-times"></i> </span>
+                                    <div class="pp__thumbnail">
+                                        <img src="assets/images/works/guggenheim-museum-2707258_1920.jpg" alt="">
+                                    </div>
+                                    <div class="portfolio__popup-info">
+                                        <div class="portfolio__popup-subtitle">Features</div>
+                                        <div class="portfolio__popup-body">
+                                            <h3 class="portfolio__popup-title">App Mobile</h3>
+                                        </div>
+                                        <p class="portfolio__popup-descsriptio"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, cupiditate.</p>
+                                        <ul class="details__info">
+                                            <li>Created - <span>3 dec 2020</span></li>
+                                            <li>technologies - <span>html,css,php,mysql</span></li>
+                                            <li>Role - <span>frontedn</span></li>
+                                            <li>view - <span>www.domain.com</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -386,21 +409,33 @@
                     <div class="work__container-list">
                         <div class="works__list">
                             <div class="works__list-card">
-                                <div class="overlay"></div>
                                 <div class="works__list-info">
-                                    <h3>Web Design2</h3>
-                                    <span>Lorem, ipsum.</span>
+                                    <h3>Web Design 3<i class="uil uil-arrow-right"></i></h3>
                                 </div>
                                 <img src="assets/images/works/guggenheim-museum-2707258_1920.jpg" alt="">
                             </div>
                         </div>
-                        <div class="works__modal">
-                            <div class="works__modal-body">
-                                <i class="uil uil-times works_close-btn"></i>
-                                <h3>Web Design2</h3>
-                                <img src="assets/images/works/guggenheim-museum-2707258_1920.jpg" alt="">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate laudantium modi veritatis mollitia nisi quas nesciunt atque vitae sint rerum ducimus, aliquid ab numquam, quis architecto, qui veniam necessitatibus aperiam?</p>
-
+                        <div class="portfolio__popup">
+                            <div class="portfolio__popup-inner">
+                                <div class="portfolio__popup-contetn grid">
+                                    <span class="portfolio__popup-colse"><i class="uil uil-times"></i> </span>
+                                    <div class="pp__thumbnail">
+                                        <img src="assets/images/works/guggenheim-museum-2707258_1920.jpg" alt="">
+                                    </div>
+                                    <div class="portfolio__popup-info">
+                                        <div class="portfolio__popup-subtitle">Features</div>
+                                        <div class="portfolio__popup-body">
+                                            <h3 class="portfolio__popup-title">App Mobile</h3>
+                                        </div>
+                                        <p class="portfolio__popup-descsriptio"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, cupiditate.</p>
+                                        <ul class="details__info">
+                                            <li>Created - <span>3 dec 2020</span></li>
+                                            <li>technologies - <span>html,css,php,mysql</span></li>
+                                            <li>Role - <span>frontedn</span></li>
+                                            <li>view - <span>www.domain.com</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -533,6 +568,10 @@
     <!-- ========================= jQuery CDN =========================== -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- ========================= jQuery CDN =========================== -->
+
+    <!-- ========================= Slick ================================ -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- ========================= Slick ================================ -->
 
     <!-- ========================= CUSTOM JS ============================ -->
     <script src="assets/js/main.js"></script>
