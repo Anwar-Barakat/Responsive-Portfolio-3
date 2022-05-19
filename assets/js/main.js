@@ -170,20 +170,32 @@ themeButton.addEventListener('click', () => {
 
 
 //? =========================== Works Filter  ============================
-$(function() {
-    $('.list').click(function() {
-        $(this).addClass('active').siblings().removeClass('active');
 
-        const value = $(this).attr('data-filter');
-        if (value == 'all')
-            $('.work__container-content').show(500);
-        else {
-            $('.work__container-content').not('.' + value).hide(500);
-            $('.work__container-content').filter('.' + value).show(500);
-        }
-    });
+var mixer = mixitup('.works__container', {
+    selectors: {
+        target: '.work__card'
+    },
+    animation: {
+        duration: 300
+    }
+});
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('work__button')) {
+        togglePortfolioPopup();
+        portfolioItemDetails(e.target.parentElement);
+    }
 });
 
+function togglePortfolioPopup() {
+    document.querySelector('.portfolio__popup').classList.toggle('open')
+}
+const closeModal = document.querySelector('.portfolio__popup-close');
+closeModal.addEventListener('click', togglePortfolioPopup);
+
+function portfolioItemDetails(item) {
+    document.querySelector('.pp__thumbnail img').src = item.querySelector('.work__img').src;
+    document.querySelector('.portfolio__popup-body').innerHTML = item.querySelector('.portfolio__details').innerHTML;
+}
 //? =========================== Works Filter  ============================
 
 //? =========================== Change Website Color  ====================
