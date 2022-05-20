@@ -713,6 +713,7 @@ textarea {
 
 .home__container .home__content .home__data .home__description {
   margin-bottom: var(--mb-2);
+  padding-right: 2rem;
 }
 
 .home__container .home__scroll {
@@ -761,6 +762,9 @@ textarea {
 }
 
 .about__container .image__box-img .about__img {
+  -webkit-box-shadow: 0px 16px 10px rgba(0, 0, 0, 0.1), 0px 3px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 16px 10px rgba(0, 0, 0, 0.1), 0px 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 9px;
   border-radius: 0.5rem;
 }
 
@@ -1391,6 +1395,21 @@ textarea {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .works .works__container .portfolio__popup .portfolio__popup-inner .portfolio__popup-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .works .pp__thumbnail {
+    max-width: 50vw;
+  }
+}
+
 @media screen and (min-width: 768px) {
   body {
     margin: 0;
@@ -1521,6 +1540,10 @@ textarea {
     width: 250px;
     height: 250px;
   }
+  .works .works__container .portfolio__popup .portfolio__popup-inner .portfolio__popup-content {
+    -ms-grid-columns: minmax(150px, 1fr) [auto-fill];
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -1536,9 +1559,6 @@ textarea {
   .works__container {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-  }
-  .works__container .work__container-content .works__modal .works__modal-body {
-    max-width: 450px;
   }
   .contact__container .contact__form {
     width: 460px;
