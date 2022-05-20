@@ -1,4 +1,10 @@
-window.onload = function() {
+window.onload = () => {
+    VanillaTilt.init(document.querySelectorAll(".home__img,.image__box"), {
+        max: 25,
+        speed: 400,
+        glare: true,
+        "max-glare": 1,
+    });
     //? =========================== Button Anumation  ===========================
     const mainBtn = document.querySelectorAll('.button');
 
@@ -292,6 +298,6 @@ window.onload = function() {
     sr.reveal(`
     .nav__logo,
     .section__subtitle,
-    .contact .contact__button`, { delay: 1000, origin: 'left' })
-        //? =========================== Scoll Reveal Animation  ==================
+    .contact .contact__button`, { delay: 1000, origin: 'left' });
+    //? =========================== Scoll Reveal Animation  ==================
 }
