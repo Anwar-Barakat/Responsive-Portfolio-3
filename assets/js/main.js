@@ -240,3 +240,56 @@ document.getElementById('scrollTop').addEventListener('click', () => {
 
 });
 //? =========================== Sroll To Top  ============================
+
+//? =========================== Scoll Reveal Animation  ==================
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '100px',
+    duration: 2500,
+    delay: 400,
+
+});
+sr.reveal(`
+.home__img ,
+.about__data`)
+
+
+sr.reveal(`
+.nav__menu .nav__list li,
+.works__filters-btns li`, { delay: 200, interval: 100 })
+
+sr.reveal(`
+.nav__btns,
+.nav__color,
+.scroll__to__about,
+.footer__container div`, { origin: 'bottom', delay: 300, interval: 200 })
+
+sr.reveal(`
+.work__card`, { delay: 400, interval: 200, origin: 'bottom' })
+
+sr.reveal(`
+.contact__data .contact__inforamtion,
+.footer__copyright`, { delay: 400, interval: 200, origin: 'left' })
+
+
+sr.reveal(`
+.home__data,
+.section__title`, { delay: 400 })
+
+sr.reveal(`
+.home__social ,
+.home .button,
+.image__box,
+.about .button`, { delay: 600, origin: 'left' })
+
+sr.reveal(`
+.contact__inputs .contact__content`, { delay: 600, origin: 'right' })
+
+sr.reveal(`
+.frontend__carrier div,.contact__content`, { delay: 800, interval: 100 })
+
+sr.reveal(`
+.nav__logo,
+.section__subtitle,
+.contact .contact__button`, { delay: 1000, origin: 'left' })
+    //? =========================== Scoll Reveal Animation  ==================
