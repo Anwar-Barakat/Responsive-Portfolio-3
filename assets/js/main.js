@@ -2,7 +2,6 @@ window.onload = () => {
     VanillaTilt.init(document.querySelectorAll(".home__img,.image__box"), {
         max: 25,
         speed: 400,
-        glare: true,
         "max-glare": 1,
     });
     //? =========================== Button Anumation  ===========================
