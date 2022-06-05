@@ -365,8 +365,27 @@ textarea {
   transition: var(--main-transition);
 }
 
-.header .nav .nav__logo:hover {
+.header .nav .nav__logo {
   color: var(--first-color);
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--first-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  -webkit-box-shadow: var(--box-shadow-alt);
+          box-shadow: var(--box-shadow-alt);
+}
+
+.header .nav .nav__logo:hover {
+  color: var(--first-color-alt);
 }
 
 .header .nav .nav__menu.show-menu {

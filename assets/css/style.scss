@@ -351,8 +351,17 @@ textarea {
         }
         .nav__logo {
             &:hover {
-                color: var(--first-color);
+                color: var(--first-color-alt);
             }
+            color: var(--first-color);
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--first-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: var(--box-shadow-alt);
         }
         .nav__menu {
             &.show-menu {
