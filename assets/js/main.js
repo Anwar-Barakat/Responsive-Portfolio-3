@@ -1,5 +1,5 @@
 window.onload = () => {
-  VanillaTilt.init(document.querySelectorAll(".home__img,.image__box"), {
+  VanillaTilt.init(document.querySelectorAll(".image__box"), {
     max: 25,
     speed: 400,
     "max-glare": 1,
